@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Форма для загрузки файла и изображения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h3 {
+            color: #0073e6;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #888888;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005ba5;
+        }
+    </style>
+</head>
+<body>
+<h3>Загрузите файл и выберите обложку для своей книги</h3>
+
+<form action="http://localhost:8080/science" method="post" enctype="multipart/form-data">
+    <!-- Поле для загрузки файла -->
+    <label for="file">Выбрите книгу:</label>
+    <input type="file" name="file" id="file" accept=".pdf, .doc, .png, .jpg, .docx, .txt">
+
+    <!-- Поле для выбора изображения -->
+    <label for="image">Выберите оболожку:</label>
+    <input type="file" name="image" id="image" accept=".pdf, .png, .jpg, .doc, .docx, .txt">
+
+    <!-- Поле для описания -->
+    <label for="description">Описание:</label>
+    <textarea name="description" id="description" rows="4" cols="50"></textarea>
+
+    <!-- Кнопка для отправки данных -->
+    <input type="submit" value="Добавить">
+</form>
+</body>
+</html>
